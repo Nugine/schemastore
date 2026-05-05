@@ -1,3 +1,4 @@
+#:schema ../../schemas/json/cargo.json
 [package]
 name = "libc-cfg"
 version = "0.3.3"
@@ -42,7 +43,13 @@ proc-macro2 = "1.0.106"
 quote = "1.0.45"
 regex = "1.12.3"
 std-next = "0.1.9"
-syn = { version = "2.0.117", features = ["full", "visit", "visit-mut", "extra-traits"] }
+syn = { version = "2.0.117", features = [
+  "full",
+  "visit",
+  "visit-mut",
+  "extra-traits",
+] }
 
 [profile.release]
 debug = "line-tables-only"
+#:schema ../../schemas/json/cargo.json

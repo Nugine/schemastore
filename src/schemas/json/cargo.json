@@ -2237,10 +2237,16 @@
           "$ref": "#/definitions/Lints"
         },
         {
+          "type": "object",
           "if": {
+            "type": "object",
+            "properties": {
+              "workspace": true
+            },
             "required": ["workspace"]
           },
           "then": {
+            "type": "object",
             "properties": {
               "workspace": {
                 "const": true,
