@@ -52,4 +52,3 @@ syn = { version = "2.0.117", features = [
 
 [profile.release]
 debug = "line-tables-only"
-#:schema ../../schemas/json/cargo.json

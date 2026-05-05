@@ -9,4 +9,3 @@ workspace = true
 
 [lints.rust]
 unsafe_code = "forbid"
-#:schema ../../schemas/json/cargo.json
