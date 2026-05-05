@@ -2232,21 +2232,25 @@
     },
     "lints": {
       "description": "Override the default level of lints from different tools by assigning them to a new level in a table.",
-      "anyOf": [
+      "allOf": [
         {
           "$ref": "#/definitions/Lints"
         },
         {
-          "type": "object",
-          "properties": {
-            "workspace": {
-              "type": "boolean",
-              "description": "Inherit lints from the workspace manifest."
-            }
+          "if": {
+            "required": ["workspace"]
           },
-          "required": ["workspace"],
-          "additionalProperties": false,
-          "x-tombi-table-keys-order": "version-sort"
+          "then": {
+            "properties": {
+              "workspace": {
+                "const": true,
+                "description": "Inherit lints from the workspace manifest."
+              }
+            },
+            "required": ["workspace"],
+            "maxProperties": 1,
+            "x-tombi-table-keys-order": "version-sort"
+          }
         }
       ],
       "x-taplo": {
